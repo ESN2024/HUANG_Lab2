@@ -6,7 +6,8 @@ Cette conception réalise une fonction de comptage sur la carte DE10-Lite, en ut
 La valeur du compteur sur le cœur logiciel est d'abord conçue dans la partie logicielle pour convertir le décimal en BCD, en utilisant la programmation en langage C. Ensuite, elle est transmise hors du système QSYS par le biais du PIO. Dans la partie FPGA, un module de conversion binaire en afficheur numérique est écrit en langage VHDL. Ce module est appelé trois fois pour afficher respectivement les valeurs des centaines, dizaines et unités du compteur. La valeur finale du compteur est affichée sur l'afficheur numérique.
 
 ## System Architecture
-Notre conception de sortie PIO utilise une sortie PIO de 12 bits. Pour cette sortie de 12 bits, chaque groupe de 4 bits est connecté à un code VHDL pour la conversion binaire en afficheur numérique, correspondant respectivement aux centaines, dizaines et unités du compteur. Le schéma de la conception est illustré dans la figure 3.
+Notre conception de sortie PIO utilise une sortie PIO de 12 bits. Pour cette sortie de 12 bits, chaque groupe de 4 bits est connecté à un code VHDL pour la conversion binaire en afficheur numérique, correspondant respectivement aux centaines, dizaines et unités du compteur. Le schéma de la conception est illustré dans la figure 3.  
+![Description](figure3.png)
 
 La communication entre NIOS et les différents modules se fait par le biais du bus spécialisé Avalon d'Inter, comme indiqué dans l'AVMM de la figure. La commande de chaque appareil se fait par la lecture et l'écriture de son adresse. Notre conception est divisée en trois parties : les première et deuxième parties sont réalisées grâce à un délai produit par la fonction usleep(). 
 Dans la première partie, nous avons écrit une variable de type int en C, qui compte de 0 à 9 en boucle, puis affiche cette valeur sur l'afficheur numérique. 
