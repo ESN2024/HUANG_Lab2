@@ -16,9 +16,11 @@ La troisième partie consiste en un TIMER générant une interruption toutes les
 
 ## Progress Results
 En observant les valeurs sur l'afficheur numérique, notre projet conçu a réalisé dans la première partie une augmentation du compteur de 0 à 9, et la vitesse peut être modifiée dans la fonction usleep() de la partie logicielle. 
+
 https://github.com/ESN2024/HUANG_Lab2/assets/94178929/ba56ec66-af5c-4779-9a6b-d18c1a583a65
 
 La deuxième partie a réalisé un cycle de comptage de 0 à 999, avec un intervalle d'augmentation de 1 seconde. 
+
 https://github.com/ESN2024/HUANG_Lab2/assets/94178929/19efdc14-caa5-4c7b-98a1-227ad7b5dcaf
 
 Dans notre troisième partie, à chaque interruption générée par le Timer, le compteur augmente de 1, correspondant à notre 1 seconde, l'afficheur numérique augmente également de 1. 
